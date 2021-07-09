@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CarWash</string>
+    <string name="set_sity_heading">ВЫБЕРИТЕ ГОРОД</string>hint
+    <string name="set_sity_continue">Продолжить</string>
+    <string name="set_sity_hint">Название города</string>
+
+    <string name="degress_icon_about_day">℃</string>
+    <string name="feels_about_day">Ощущается</string>
+    <string name="humidity_about_day">Влажность</string>
+    <string name="probability_about_day">Вероятность осадков</string>
+    <string name="pressure_about_day">Давление</string>
+    <string name="data_about_day">Данные предоставленны openweathermap</string>
+    <string name="nulls">------</string>
+</resources>

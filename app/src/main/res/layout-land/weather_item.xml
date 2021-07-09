@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:gravity="center_horizontal"
+    android:background="@color/blue_gray">
+
+    <TextView
+        android:id="@+id/sity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пермь"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/ivory"
+        />
+    <TextView
+        android:id="@+id/coll_degress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="29°C"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/ivory"
+        />
+    <TextView
+        android:id="@+id/precipitation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ясно"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/ivory"
+        />
+    <ImageView
+        android:id="@+id/precipitation_icon"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/d_01"
+        android:paddingBottom="15dp"
+        />
+
+
+</LinearLayout>
