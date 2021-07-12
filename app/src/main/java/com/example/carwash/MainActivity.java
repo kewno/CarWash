@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.carwash.RecyclerViewWeatherItem.Adapter;
 import com.example.carwash.RecyclerViewWeatherItem.WeatherItem;
@@ -50,7 +52,16 @@ public class MainActivity extends AppCompatActivity {
         weatherWrap = findViewById(R.id.weather_item);
         weatherWrap.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
+        weatherWrap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("ASSS", "vvew");
+                //Toast.makeText(this, "Пик", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         getWeather();
+
     }
 
     public List<WeatherItem> mock() {
