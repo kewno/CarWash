@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AboutDayActivity.class);
                 intent.putExtra("position", position);
                 intent.putExtra("index", indexList);
+                Log.e("ASSS1", String.valueOf(indexList));
                 intent.putExtra("degress", list.get(position).getTemp());
                 intent.putExtra("precipitation", list.get(position).getPrecipitation());
                 startActivity(intent);
@@ -81,18 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     public List<WeatherItem> mock() {
         return list;
-    }
-
-    public void setOutput() {
-        String output = "Самое время отправиться на мойку";
-
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getPrecipitation() == "Осадки" && i < 2) {
-                output = "Мойку автомобиля стоит отложить";
-            }
-        }
-
-        precipitation.setText(output);
     }
 
     public void getWeather() {
@@ -125,16 +114,17 @@ public class MainActivity extends AppCompatActivity {
                     if (i < 8 && check && !(arr[1].equals("00:00:00") || arr[1].equals("03:00:00") || arr[1].equals("06:00:00") || arr[1].equals("09:00:00"))) {
                         list.add(new WeatherItem(date, String.valueOf(Math.round(model.getList().get(i).getMain().getTemp())), model.getList().get(i).getWeather().get(0).getDescription(), model.getList().get(i).getWeather().get(0).getIcon()));
                         check = false;
+                        Log.e("ASSS", String.valueOf(i + "i"));
                         if (i == 4)
                             indexList = 7;
                         else if (i == 3)
                             indexList = 6;
                         else if (i == 2)
                             indexList = 5;
-                        else if (i == 1) {
-                            if (arr[1].equals("12:00:00"))
-                                indexList = 4;
-                            else if (arr[1].equals("15:00:00"))
+                        else if (i == 1)
+                            indexList = 4;
+                        else if (i == 0) {
+                            if (arr[1].equals("15:00:00"))
                                 indexList = 3;
                             else if (arr[1].equals("18:00:00"))
                                 indexList = 2;
@@ -152,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
                 weatherWrap.setAdapter(new Adapter(mock(), listener));
 
                 sity.setText("Ваш город: " + sityNameText);
-                setOutput();
             }
 
             @Override

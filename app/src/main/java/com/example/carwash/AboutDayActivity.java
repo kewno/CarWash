@@ -91,6 +91,7 @@ public class AboutDayActivity extends AppCompatActivity {
                 }
             }
         } else {
+            Log.e("ASSS", String.valueOf(indexList));
             int start = 0;
             int end = indexList;
             for (int i = start; i < end; i++) {
