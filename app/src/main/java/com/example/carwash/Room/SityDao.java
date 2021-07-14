@@ -21,4 +21,7 @@ public interface SityDao {
 
     @Delete
     void delete(Sity sity);
+
+    @Query("DELETE FROM sity")
+    int deleteAll();
 }

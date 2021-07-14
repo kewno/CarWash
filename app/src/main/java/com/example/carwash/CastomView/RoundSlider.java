@@ -95,7 +95,6 @@ public class RoundSlider extends View {
         } else {
             height = desiredHeight;
         }
-        Log.e("ASSS", "w=" + width + " "+ "h=" + height);
         setMeasuredDimension(width, height);
     }
 
@@ -133,15 +132,6 @@ public class RoundSlider extends View {
         canvas.drawArc(frameOval, START_ANGLE, END_ANGLE - START_ANGLE, false, paint);
 
         paint.setStyle(Paint.Style.FILL);
-//        canvas.drawCircle(
-//                (float) Math.cos(Math.toRadians(END_ANGLE)) * roundRadius + center.x,
-//                (float) Math.sin(Math.toRadians(END_ANGLE)) * roundRadius + center.y,
-//                minRadius, paint);
-//
-//        canvas.drawCircle(
-//                (float) Math.cos(Math.toRadians(START_ANGLE)) * roundRadius + center.x,
-//                (float) Math.sin(Math.toRadians(START_ANGLE)) * roundRadius + center.y,
-//                minRadius, paint);
     }
 
     private void drawTouchSlider(Canvas canvas) {

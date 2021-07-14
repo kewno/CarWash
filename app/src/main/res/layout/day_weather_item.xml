@@ -8,13 +8,13 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:gravity="center_horizontal"
-    android:background="@color/blue_gray">
+    android:background="@color/niagara">
 
     <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="21:00"
+        android:text="@string/nulls"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +26,7 @@
         android:id="@+id/coll_degress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="29В°C"
+        android:text="@string/nulls"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,12 +47,14 @@
         android:id="@+id/precipitation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="11.1 РєРј/С‡"
+        android:text="@string/nulls"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         android:textColor="@color/white"
+        android:maxWidth="100dp"
+        android:gravity="center"
         />
 
 </LinearLayout>

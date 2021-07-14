@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.setSityActivity"
     android:background="@color/blue_gray">
-
+<!--    tools:context=".Activity.setSityActivity"-->
     <TextView
         android:id="@+id/set_sity_heading"
         android:layout_width="wrap_content"
@@ -30,7 +29,8 @@
         android:text=""
         android:hint="@string/set_sity_hint"
         android:background="@drawable/background_edit"
-        android:padding="5dp"
+        android:padding="12dp"
+        android:imeOptions="actionDone"
         />
 
     <TextView

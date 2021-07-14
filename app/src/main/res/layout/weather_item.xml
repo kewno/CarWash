@@ -8,13 +8,14 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:gravity="center_horizontal"
-    android:background="@color/blue_gray">
+    app:layoutManager="LinearLayoutManager"
+    android:background="@color/niagara">
 
     <TextView
         android:id="@+id/sity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="РџРµСЂРјСЊ"
+        android:text="@string/nulls"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +27,7 @@
         android:id="@+id/coll_degress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="29В°C"
+        android:text="@string/nulls"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,9 +37,10 @@
         />
     <TextView
         android:id="@+id/precipitation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="РЇСЃРЅРѕ"
+        android:layout_width="100dp"
+        android:gravity="center"
+        android:layout_height="60dp"
+        android:text="@string/nulls"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

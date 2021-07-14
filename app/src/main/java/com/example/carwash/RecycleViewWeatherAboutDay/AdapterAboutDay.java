@@ -1,6 +1,5 @@
-package com.example.carwash.RecyclerViewWeatherItem;
+package com.example.carwash.RecycleViewWeatherAboutDay;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,30 +9,29 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carwash.R;
+import com.example.carwash.RecyclerViewWeatherItem.Adapter;
+import com.example.carwash.RecyclerViewWeatherItem.WeatherItem;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    List<WeatherItem> data;
+public class AdapterAboutDay extends RecyclerView.Adapter<AdapterAboutDay.ViewHolder> {
+    List<WeatherAboutDay> data;
 
-    private RecycleViewClickListener listener;
-
-    public Adapter(List<WeatherItem> data, RecycleViewClickListener listener) {
+    public AdapterAboutDay(List<WeatherAboutDay> data) {
         this.data = data;
-        this.listener = listener;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_item, parent, false);
-        return new ViewHolder(view);
+    public AdapterAboutDay.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.day_weather_item, parent, false);
+        return new AdapterAboutDay.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        WeatherItem chatMess = data.get(position);
+    public void onBindViewHolder(AdapterAboutDay.ViewHolder holder, int position) {
+        WeatherAboutDay chatMess = data.get(position);
         holder.precipitation.setText(chatMess.getPrecipitation());
-        holder.sity.setText(chatMess.getSity());
+        holder.time.setText(chatMess.getTime());
         holder.temp.setText(chatMess.getTemp() + "°C");
         if (chatMess.getPrecipitationIcon().equals("01d"))
             holder.precipitationIcon.setImageResource(R.drawable.d_01);
@@ -62,29 +60,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return data.size();
     }
 
-    public interface RecycleViewClickListener {
-        void onClick(View v, int position);
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView sity;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView time;
         TextView temp;
         TextView precipitation;
         ImageView precipitationIcon;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            sity = itemView.findViewById(R.id.sity);
+            time = itemView.findViewById(R.id.time);
             temp = itemView.findViewById(R.id.coll_degress);
             precipitation = itemView.findViewById(R.id.precipitation);
             precipitationIcon = itemView.findViewById(R.id.precipitation_icon);
-
-            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View view) {
-            listener.onClick(view, getAdapterPosition());
-        }
     }
 }

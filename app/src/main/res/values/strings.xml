@@ -6,8 +6,8 @@
 
     <string name="degress_icon_about_day">℃</string>
     <string name="feels_about_day">Ощущается</string>
-    <string name="humidity_about_day">Влажность</string>
-    <string name="probability_about_day">Вероятность осадков</string>
+    <string name="speed_about_day">Скорость ветра</string>
+    <string name="сloud_about_day">Облачность</string>
     <string name="pressure_about_day">Давление</string>
     <string name="data_about_day">Данные предоставленны openweathermap</string>
     <string name="nulls">------</string>

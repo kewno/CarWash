@@ -21,10 +21,6 @@ public class setSityActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_sity);
-        sity = findViewById(R.id.set_sity_text);
-        button = findViewById(R.id.button);
-
         Database db = App.getInstance().getDatabase(); // получение базы
         SityDao sityDao = db.sityDao(); // из Database объекта получаем Dao
         List<Sity> sitys = sityDao.getAll();
@@ -32,10 +28,16 @@ public class setSityActivity extends AppCompatActivity {
             Intent intent = new Intent(setSityActivity.this, MainActivity.class);
             startActivity(intent);
         }
+        setContentView(R.layout.activity_set_sity);
+        sity = findViewById(R.id.set_sity_text);
+        button = findViewById(R.id.button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (sity.getText().toString().length() > 1) {
+                    sityDao.deleteAll();
+
                     Sity sityObj = new Sity(); // создание OBJ
 
                     sityObj.sityName = sity.getText().toString(); // заполнение полей
